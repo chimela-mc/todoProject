@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <form class="items" action="" method="post">
+    {% csrf_token %}
+    <div>
+      <p>Name</p>
+      <input value="{{item.title}}" type="text" name="newTitle">
+    </div>
+    <div>
+      <p>Description</p>
+      <input value="{{item.note}}" type="text" name="newNote">
+    </div>
+    <button type="submit" class="button-add">Submit Update</button>     
+  </form>
+</body>
+</html>
